@@ -49,6 +49,6 @@ dist/**
 package.nls.*.json
 l10n/
 data
-poetry.lock
-pyproject.toml
+poetry*
+pyproject*
 .vscode
