@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Library</title>
+</head>
+<body>
+    <h1>Video Library</h1>
+    {% for movie in movies %}
+    <div>
+        <p>{{ movie.title }} | {% for actor in movie.actors %} {{actor}} {% endfor %} | {{ movie.director }} | {{ movie.genre }} | {{ movie.year }} | <a href="{{ url_for('delete_video', title=movie.title) }}">Delete</a></p>
+    </div>
+    {% endfor %}
+    <a href="{{ url_for('add_video') }}">Add a Video</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

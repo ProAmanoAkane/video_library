@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a Video</title>
+</head>
+<body>
+    <h1>Add a Video</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=32) }}
+        </p>
+        <p>
+            {{ form.actor1.label }}<br>
+            {{ form.actor1(size=32) }}
+        </p>
+        <p>
+            {{ form.actor2.label }}<br>
+            {{ form.actor2(size=32) }}
+        </p>
+        <p>
+            {{ form.actor3.label }}<br>
+            {{ form.actor3(size=32) }}
+        </p>
+        <p>
+            {{ form.director.label }}<br>
+            {{ form.director(size=32) }}
+        </p>
+        <p>
+            {{ form.genre.label }}<br>
+            {{ form.genre(size=32) }}
+        </p>
+        <p>
+            {{ form.year.label }}<br>
+            {{ form.year() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <!-- Ajoutez cette ligne pour le message d'erreur -->
+    <p style="color: red;">{{ error_message }}</p>
+    <a href="{{ url_for('video_library') }}">Back to Video Library</a>
+</body>
+</html>

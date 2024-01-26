@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "client"
+version = "0.1.0"
+description = ""
+authors = ["Antonin"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "2.0.1"
+werkzeug = "^3.0.1"
+requests = "^2.31.0"
+flask-wtf = "^1.2.1"
+wtform = "^1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

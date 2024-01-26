@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Library</title>
+</head>
+<body>
+    <h1>Video Library</h1>
+    {% if 'username' in session %}
+    <p>Welcome, {{ session['username'] }}!</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('register') }}">Register</a>
+    {% endif %}
+    <ul>
+    {% for movie in movies %}
+        <li>
+            <h2>{{ movie['title'] }}</h2>
+            <p>{{ movie['genre'] }}</p>
+            {% if 'username' in session %}
+            <a href="{{ url_for('delete_video', title=movie['title']) }}">Delete</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+    {% if 'username' in session %}
+    <a href="{{ url_for('add_video') }}">Add a new video</a>
+    {% endif %}
+</body>
+</html>
